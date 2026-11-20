@@ -1,10 +1,10 @@
 ---
-description: Eksekusi plan dari file markdown
-argument-hint: <path ke file plan>
+description: Execute a plan from a markdown file
+argument-hint: <path to plan file>
 ---
 
-Eksekusi file plan yang diberikan: $ARGUMENTS.
+Execute the given plan file: $ARGUMENTS.
 
-Gunakan skill `plan-execute` untuk membaca file plan tersebut dan mengerjakan
-langkah-langkahnya secara berurutan sampai selesai, mencentang tiap langkah
-(`- [x]`) di file-nya, lalu laporkan ringkasan hasil.
+Use the `plan-execute` skill to read the plan file and carry out its steps in
+order until complete, ticking off each step (`- [x]`) in the file, then report
+a summary of the results.

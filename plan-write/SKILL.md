@@ -18,21 +18,21 @@ different AI agent CLI can open it and immediately execute the steps.
 
 - Folder: `~/.plans/` (create it if it doesn't exist).
 - Filename: `<YYYY-MM-DD>_<topic-slug>.md` — lowercase, words separated by `-`.
-  Example: `~/.plans/2026-11-20_fitur-login.md`.
+  Example: `~/.plans/2026-11-20_add-login-feature.md`.
 
 ## Template — ALWAYS use this exact structure
 
 ```
 # [Plan title]
 
-## Tujuan / Goal
+## Goal
 One or two sentences on what should be achieved.
 
-## Konteks / Context
+## Context
 Background: repository, starting state, constraints, and anything the executor
 must know. Be concrete — name repos, directories, and files.
 
-## Langkah-langkah / Steps
+## Steps
 - [ ] 1. First step (specific + concrete file path)
 - [ ] 2. Next step
 - [ ] 3. ...
@@ -40,10 +40,10 @@ must know. Be concrete — name repos, directories, and files.
 ## Files / Areas affected
 - `path/to/file` — the planned change
 
-## Kriteria Selesai / Acceptance criteria
+## Acceptance criteria
 - [ ] How to verify the plan succeeded
 
-## Catatan / Dependencies
+## Dependencies / Notes
 Dependencies, risks, and key decisions the executor should respect.
 ```
 
@@ -54,4 +54,4 @@ Dependencies, risks, and key decisions the executor should respect.
 - **Ordered, specific, actionable**: steps in execution order, with concrete
   file paths.
 - Use `- [ ]` checkboxes so the executor can tick off progress.
-- After writing, report the full path, e.g. `~/.plans/2026-11-20_fitur-login.md`.
+- After writing, report the full path, e.g. `~/.plans/2026-11-20_add-login-feature.md`.

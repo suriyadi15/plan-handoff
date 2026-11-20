@@ -1,32 +1,33 @@
 # plan-handoff
 
-Sepasang skill untuk **menulis plan** di satu agent CLI, lalu **mengeksekusinya** di agent CLI lain.
+A pair of skills to **write a plan** in one agent CLI, then **execute it** in
+another.
 
-> **Alur:** CLI 1 membuat plan → tersimpan ke `~/.plans/<tanggal>_<topik>.md` → CLI 2 (sesi baru) membuka & mengeksekusi plan itu.
+> **Flow:** CLI 1 creates a plan → saved to `~/.plans/<date>_<topic>.md` →
+> CLI 2 (a fresh session) opens and executes that plan.
 
-## Skill
+## Skills
 
-| Skill | Peran | Arah |
+| Skill | Role | Direction |
 |---|---|---|
-| [`plan-write`](./plan-write/SKILL.md) | Menyusun plan & menyimpannya ke `~/.plans/` | CLI 1 (planning) |
-| [`plan-execute`](./plan-execute/SKILL.md) | Membaca plan & mengerjakan langkah-langkahnya | CLI 2 (eksekusi) |
+| [`plan-write`](./plan-write/SKILL.md) | Writes a plan and saves it to `~/.plans/` | CLI 1 (planning) |
+| [`plan-execute`](./plan-execute/SKILL.md) | Reads a plan and carries out its steps | CLI 2 (execution) |
 
-Plan disimpan memakai template standar: **Tujuan, Konteks, Langkah-langkah, Files, Kriteria Selesai, Catatan** — dengan checkbox `- [ ]` agar progres bisa dicentang.
+Plans use a standard template — **Goal, Context, Steps, Files, Acceptance
+criteria, Dependencies** — with `- [ ]` checkboxes so progress can be ticked off.
 
-## Install skill
+## Install the skills
 
-### Via `npx skills` (lintas CLI)
+### Via `npx skills` (cross-CLI)
 
 ```bash
-npx skills add <owner>/plan-handoff@plan-write
-npx skills add <owner>/plan-handoff@plan-execute
+npx skills add suriyadi15/plan-handoff@plan-write
+npx skills add suriyadi15/plan-handoff@plan-execute
 ```
-
-Ganti `<owner>` dengan username GitHub-mu.
 
 ### Manual
 
-Copy folder skill ke direktori skills CLI-mu:
+Copy each skill folder into your CLI's skills directory:
 
 ```bash
 # Claude Code
@@ -38,9 +39,9 @@ cp -r plan-write ~/.agents/skills/plan-write
 cp -r plan-execute ~/.agents/skills/plan-execute
 ```
 
-## Install slash command `/eksekusi`
+## Install the `/eksekusi` slash command
 
-Slash command tidak ikut `npx skills`, jadi copy manual:
+Slash commands aren't shipped by `npx skills`, so copy them manually:
 
 ```bash
 # Claude Code
@@ -50,29 +51,29 @@ cp commands/claude/eksekusi.md ~/.claude/commands/eksekusi.md
 cp commands/opencode/eksekusi.md ~/.config/opencode/commands/eksekusi.md
 ```
 
-## Cara pakai
+## Usage
 
-**1. CLI 1 — buat plan**
-
-```
-buat plan untuk fitur login
-```
-
-Skill `plan-write` otomatis aktif dan menyimpan:
-`~/.plans/2026-11-20_fitur-login.md`
-
-**2. CLI 2 (baru) — eksekusi plan**
+**1. CLI 1 — write a plan**
 
 ```
-/eksekusi ~/.plans/2026-11-20_fitur-login.md
+create a plan for the login feature
 ```
 
-Skill `plan-execute` membaca plan, mengerjakan tiap langkah berurutan, mencentang
-`- [x]` di file-nya, lalu melaporkan ringkasan.
+The `plan-write` skill activates and saves:
+`~/.plans/2026-11-20_add-login-feature.md`
 
-## Kodex / Gemini CLI
+**2. CLI 2 (new) — execute the plan**
 
-`SKILL.md` adalah standar lintas-agent (didukung Claude Code, OpenCode, Cursor,
-dan ekosistem `skills.sh`). Untuk Codex CLI (format `AGENTS.md`) dan Gemini CLI
-(extension tersendiri), konten skill-nya generik dan bisa ditempel/diadaptasi
-manual — tidak ada auto-install.
+```
+/eksekusi ~/.plans/2026-11-20_add-login-feature.md
+```
+
+The `plan-execute` skill reads the plan, carries out each step in order, ticks
+`- [x]` in the file, and reports a summary.
+
+## Codex / Gemini CLI
+
+`SKILL.md` is the cross-agent standard (supported by Claude Code, OpenCode,
+Cursor, and the `skills.sh` ecosystem). For Codex CLI (`AGENTS.md`) and Gemini
+CLI (its own extension format), the skill content is generic and can be pasted /
+adapted manually — there is no auto-install.

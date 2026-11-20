@@ -11,19 +11,19 @@ can carry out a plan written earlier by another agent.
 ## When to apply
 
 - The user gives a path to a `.md` plan file and asks to execute it.
-- The user says "jalankan / eksekusi / execute / run" a plan.
+- The user says "execute / run / jalankan / eksekusi" a plan.
 - The user opens a plan document and wants it carried out.
 
 ## How to execute
 
 1. Read the plan file.
 2. Understand each section:
-   - **Tujuan / Goal** — the outcome to achieve.
-   - **Konteks / Context** — starting state and constraints.
-   - **Langkah-langkah / Steps** — the ordered tasks to perform.
+   - **Goal** — the outcome to achieve.
+   - **Context** — starting state and constraints.
+   - **Steps** — the ordered tasks to perform.
    - **Files / Areas affected** — what to touch.
-   - **Kriteria Selesai / Acceptance** — how to verify success.
-   - **Catatan / Dependencies** — risks and dependencies.
+   - **Acceptance criteria** — how to verify success.
+   - **Dependencies / Notes** — risks and dependencies.
 3. Execute the steps in order. For each step:
    - Do the actual work (edit files, run commands, etc.).
    - Mark the step's checkbox `- [x]` in the plan file once done.
