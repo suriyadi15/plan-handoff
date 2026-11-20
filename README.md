@@ -39,16 +39,18 @@ cp -r plan-write ~/.agents/skills/plan-write
 cp -r plan-execute ~/.agents/skills/plan-execute
 ```
 
-## Install the `/eksekusi` slash command
+## Install the slash commands
 
 Slash commands aren't shipped by `npx skills`, so copy them manually:
 
 ```bash
 # Claude Code
-cp commands/claude/eksekusi.md ~/.claude/commands/eksekusi.md
+cp commands/claude/plan-write.md ~/.claude/commands/plan-write.md
+cp commands/claude/plan-execute.md ~/.claude/commands/plan-execute.md
 
 # OpenCode
-cp commands/opencode/eksekusi.md ~/.config/opencode/commands/eksekusi.md
+cp commands/opencode/plan-write.md ~/.config/opencode/commands/plan-write.md
+cp commands/opencode/plan-execute.md ~/.config/opencode/commands/plan-execute.md
 ```
 
 ## Usage
@@ -56,16 +58,17 @@ cp commands/opencode/eksekusi.md ~/.config/opencode/commands/eksekusi.md
 **1. CLI 1 — write a plan**
 
 ```
-create a plan for the login feature
+/plan-write login feature
 ```
 
-The `plan-write` skill activates and saves:
-`~/.plans/2026-11-20_add-login-feature.md`
+You can also just ask naturally ("create a plan for the login feature"). The
+`plan-write` skill saves the plan to
+`~/.plans/2026-11-20_add-login-feature.md`.
 
 **2. CLI 2 (new) — execute the plan**
 
 ```
-/eksekusi ~/.plans/2026-11-20_add-login-feature.md
+/plan-execute ~/.plans/2026-11-20_add-login-feature.md
 ```
 
 The `plan-execute` skill reads the plan, carries out each step in order, ticks

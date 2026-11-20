@@ -1,6 +1,6 @@
 ---
 name: plan-write
-description: Persists a plan (implementation plan, plan-of-action, or planning output) into a self-contained Markdown document under ~/.plans/ so it can be handed off to and executed by a fresh AI agent CLI session. Use this whenever the user asks to create/write/draft a plan (e.g. "buat plan", "rencanakan", "plan an implementation"), finishes planning and wants to save it, or wants the plan saved for another agent to execute — even if they don't explicitly say "save to file" or "handoff".
+description: Persists a plan (implementation plan, plan-of-action, or planning output) into a self-contained Markdown document under ~/.plans/ so it can be handed off to and executed by a fresh AI agent CLI session. Use this whenever the user asks to create/write/draft a plan (e.g. "plan an implementation", "write a roadmap"), finishes planning and wants to save it, or wants the plan saved for another agent to execute — even if they don't explicitly say "save to file" or "handoff".
 ---
 
 # Plan Write

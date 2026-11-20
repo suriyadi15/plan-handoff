@@ -1,6 +1,6 @@
 ---
 name: plan-execute
-description: Executes a saved plan document (a Markdown file, typically under ~/.plans/ or any path the user provides) by working through its steps in order, ticking off completed tasks, and updating the plan file with progress. Use this whenever the user points at a plan file, says "execute / run / jalankan / eksekusi this plan", or asks to carry out a saved plan document step by step.
+description: Executes a saved plan document (a Markdown file, typically under ~/.plans/ or any path the user provides) by working through its steps in order, ticking off completed tasks, and updating the plan file with progress. Use this whenever the user points at a plan file, says "execute" or "run" this plan, or asks to carry out a saved plan document step by step.
 ---
 
 # Plan Execute
@@ -11,7 +11,7 @@ can carry out a plan written earlier by another agent.
 ## When to apply
 
 - The user gives a path to a `.md` plan file and asks to execute it.
-- The user says "execute / run / jalankan / eksekusi" a plan.
+- The user says "execute" or "run" a plan.
 - The user opens a plan document and wants it carried out.
 
 ## How to execute
