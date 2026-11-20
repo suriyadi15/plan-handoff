@@ -8,6 +8,12 @@ description: Executes a saved plan document (a Markdown file, typically under ~/
 Read a saved plan document and execute it to completion, so a fresh CLI session
 can carry out a plan written earlier by another agent.
 
+## Input
+
+The plan path may come from a slash invocation (`/plan-execute <path>`) or from
+the user's message. If no path is given, list `~/.plans/*.md` (newest first) and
+ask which one to execute.
+
 ## When to apply
 
 - The user gives a path to a `.md` plan file and asks to execute it.

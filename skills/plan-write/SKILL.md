@@ -8,6 +8,12 @@ description: Persists a plan (implementation plan, plan-of-action, or planning o
 Turn a planning result into a standalone Markdown document at `~/.plans/`, so a
 different AI agent CLI can open it and immediately execute the steps.
 
+## Input
+
+The topic may come from a slash invocation (`/plan-write <topic>`) or from the
+user's message. If neither gives a topic, use the planning result already in the
+conversation, or ask what the plan is about.
+
 ## When to apply
 
 - The user asks to create / write / draft a plan, roadmap, or implementation steps.
